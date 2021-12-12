@@ -1,2 +1,2 @@
 # ubiquitous-barnacle
-Django + MongoDB
+[Outdated] Django + MongoDB / Djongo

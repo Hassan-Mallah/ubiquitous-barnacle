@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'ProjectMongoDB.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': env('DATABASE_NAME'),
+        'CLIENT': {
+            'host': 'mongodb+srv://{}:{}@{}.rthfj.mongodb.net/{}?retryWrites=true&w=majority'.format(env('USERNAME'), env('PASSWORD'), env('DATABASE_NAME'), env('DATABASE_NAME'))
+
+        }
     }
 }
 
